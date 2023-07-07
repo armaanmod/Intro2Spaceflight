@@ -1,7 +1,7 @@
 1;
 
-% Apperture diameter
-lambda = 0.5*10^6; % in meter
-GSD = 50; % in m
-h = 750*10^3; % in m
-D = CalcAppertureDiameter(h,lambda,GSD);
+%% Aperture diameter
+lambda = 0.5*10^6; % Wavelength
+GR = 50; % Ground Resolution
+h = 750*10^3; % Distance between the satellite and the ground
+D = CalcApertureDiameter(h, lambda, GR);
