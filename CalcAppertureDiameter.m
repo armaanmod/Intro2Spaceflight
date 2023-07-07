@@ -1,3 +1,3 @@
-function D = CalcAppertureDiameter (h, lambda, GSD)
-D = (2.44*h*lambda)/GSD;
+function D = CalcApertureDiameter (h, lambda, Gr)
+D = (2.44 * h * lambda) / GR;
 end
