@@ -10,7 +10,7 @@ r_earth = 6378 * 1000; % Radius of Earth
 G_earth = 6.67*10^(-11); % Gravitation Constant of Earth
 M_earth = 5.974 * 10^24; % Mass of Earth
 mu_earth = G_earth * M_earth; % Standard Gravitational Parameter of Earth   
-g_0_earth = 9.81;
+g_0_earth = 9.80665;
 
 a_ini = 6678 * 1000; % Initial Orbit Radius
 e_ini = 0; % Eccentricity of Initial Orbit, 0 implies circular orbit.
