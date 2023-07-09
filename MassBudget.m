@@ -16,5 +16,7 @@ Stages =["Delta V1"; "Delta V2"; "Inclination Change"];
 initialMasses = [initial_Mass_1; initial_Mass_2; initial_Mass_3];
 finalMasses = [initial_Mass_2;initial_Mass_3;dry_mass];
 IspValues = [Isp_ini; Isp_ini; Isp_ini];
+Burns = [deltaV1;deltaV2; deltaV_Incl];
+PropellantUsed = [initialMasses - finalMasses];
 
-massBudgetTable = table(Stages,initialMasses,finalMasses,IspValues)
+massBudgetTable = table(Stages,initialMasses,finalMasses,IspValues, Burns, PropellantUsed)
