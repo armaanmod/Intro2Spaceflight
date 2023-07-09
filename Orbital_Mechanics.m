@@ -1,14 +1,14 @@
 1;
 
 %% Acknowledgements
-%Git Test
+
 % Units: Throughout, SI units shall be used.
 
 %% Parameters
 
 r_earth = 6378 * 1000; % Radius of Earth
-G_earth = 6.67*10^(-11); % Gravitation Constant of Earth
-M_earth = 5.974 * 10^24; % Mass of Earth
+G_earth = 6.674*10^(-11); % Gravitation Constant of Earth
+M_earth = 5.971 * 10^24; % Mass of Earth
 mu_earth = G_earth * M_earth; % Standard Gravitational Parameter of Earth   
 g_0_earth = 9.80665;
 
