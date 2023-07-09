@@ -3,7 +3,8 @@
 %% Aperture diameter
 PayloadFrequency = 13.575 * 10^9; % The frequency of SIRAL in Cryosat 2.
 c = 2.997925 * 10^8; % Speed of light
-lambda = c / PayloadFrequency; % Wavelength
+%lambda = c / PayloadFrequency; % Wavelength
+lambda = 11*10^-6; % Value to be taken either from SIRAL or EGUsphere's; Ask Vin.
 GR = 50; % Ground Resolution
 alt_target = 750 * 1000; % Target Orbit Radius
 
@@ -34,7 +35,7 @@ a_target = alt_target + r_earth;
 % Step 1: Calculate Eclipse Time
 
 vel = calc_OrbitVelocity(mu_earth, a_target, a_target); % Velocity in orbit
-T = 2*pi()*a_target/vel; % Time period of the satellite
+T = 2*pi*a_target/vel; % Time period of the satellite
 N = 365*24*60*60/T; % Number of Orbits per year
 T_e = 0.4 * T; % Eclipse Time is approximately 40% of the total orbit time.
 
@@ -54,7 +55,7 @@ C_battery = C_min * 100 / DoD; % [Wh]
 
 phi_sun = 1367; % From formulary
 efficiency_battery = 0.824; % Might change to 90%
-efficiency_array = 0.33;
+efficiency_array = 0.33; % Might change
 Pw_req = Pw_tot + (Pw_req_e / efficiency_battery); % The solar array needs to generate power for sub-systems and for charging the battery
 A_array = Pw_req/(phi_sun * efficiency_array);
 
@@ -82,6 +83,7 @@ heat_dissipated = 0.2;
 l_sat = 2.5; % Length of satellite
 b_sat = 2.1; % Breadth of satellite
 h_sat = 1.8; % Height of Satellite
+
 A_sat_sun = computeArea(l_sat, b_sat); % The biggest area is considered.
 A_sat_earth =  A_sat_sun;
 A_sat_total = 2 * computeArea (l_sat, b_sat) + 2 * computeArea(b_sat, h_sat) + 2 * computeArea(l_sat, h_sat);
@@ -104,8 +106,12 @@ Temp_celsius = Temp_kelvin - 273.15;
 % After testing the materials, anodized aluminium was chosen as it results
 % the mean temperature being in the provide range of -30 to 50 deg celsius.
 
+%% Function
+
 function A = computeArea(l,b)
     A = l*b;
 end
 
-
+function D = calcApertureDiameter(alt_target, lambda, GR)
+    D = 2.44 * alt_target * lambda / GR;
+end

@@ -9,7 +9,7 @@
 
 
 %Calculation of initial Mass given the final mass, delta V and g_0
-function m_0 = calc_IniMass(Isp, Final_mass, deltaV, g_0)
+function m_0 = calc_WetMass(Isp, dry_mass, deltaV, g_0)
     c_e = Isp * g_0;
-    m_0 = Final_mass*exp(deltaV/c_e);
+    m_0 = dry_mass*exp(deltaV/c_e);
 end
