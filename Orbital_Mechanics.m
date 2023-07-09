@@ -43,7 +43,6 @@ deltaV1 = hohmannTransfer(v_ini, v_t_peri);
 deltaV2 = hohmannTransfer(v_t_apo, v_target);
 
 deltaV_Hohmann = deltaV1 + deltaV2;
-m_prop_Hohmann = calc_PropMass(Isp_ini, m_0, deltaV_Hohmann, g_0_earth);
+
 
 deltaV_Incl = changeInclination(v_target, v_target, i_target - i_ini);
-m_prop_Incl = calc_PropMass(Isp_ini, m_0, deltaV_Incl, g_0_earth);
