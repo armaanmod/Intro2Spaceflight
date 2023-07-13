@@ -1,10 +1,10 @@
 1;
 
-%% Aperture diameter
-PayloadFrequency = 13.575 * 10^9; % The frequency of SIRAL in Cryosat 2.
 c = 2.997925 * 10^8; % Speed of light
-%lambda = c / PayloadFrequency; % Wavelength
-lambda = 11*10^-6; % Value to be taken either from SIRAL or EGUsphere's; Ask Vin.
+
+%% Aperture diameter
+
+lambda = 12.5*10^-6; % EGUsphere's paper;
 GR = 50; % Ground Resolution
 alt_target = 750 * 1000; % Target Orbit Radius
 
