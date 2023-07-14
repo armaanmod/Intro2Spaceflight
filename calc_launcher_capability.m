@@ -37,3 +37,14 @@ provided_ariane62_velocity = combined_delta_v - deltav_losses;
 if needed_velocity < provided_ariane62_velocity
     disp("Successful"); 
 end 
+
+mass_outflow_booster = mass_propellant_booster / t_burn_booster ;
+exhaust_velocity_booster = Isp_booster * g_0_earth ;
+booster_thrust = calc_thrust (mass_outflow_booster, exhaust_velocity_booster);
+%THRUST TO WEIGHT RATIO
+TWR = booster_thrust/(m_0_initial*g_0_earth);
+
+
+
+    
+
