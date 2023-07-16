@@ -22,7 +22,7 @@ IspValues = [Isp_ini; Isp_ini; Isp_ini];
 VeleocityBurns = [deltaV1;deltaV2; deltaV_Incl];
 PropellantUsed = [initialMasses - finalMasses];
 
-massBudgetTable = table(Stages,initialMasses,finalMasses, VeleocityBurns, PropellantUsed);
+massBudgetTable = table(Stages,initialMasses,finalMasses, VeleocityBurns, PropellantUsed)
 
 wet_mass_earth = initial_Mass_1;
 prop_mass_earth = sum(PropellantUsed);
